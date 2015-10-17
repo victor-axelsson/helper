@@ -1,0 +1,40 @@
+<div class="grouped-slight">
+ 
+ <div class="row">
+	 <div class="col-md-4">
+	 	<h3>Template</h3>
+	 	<textarea class="form-control" style="min-height: 200px;" ng-model="replacer.template"></textarea>
+	 </div>
+
+ 	 <div class="col-md-4">
+	 	<h3>Settings</h3>
+	 	<p><input type="checkbox" ng-model="replacer.useReplace"/>Replace </p>
+	 	<input type="text" placeholder="Begin each row with" class="form-control" ng-model="replacer.prepend">
+	 	<input type="text" placeholder="End each row with" class="form-control" ng-model="replacer.append">
+	 	<button class="btn btn-success form-control" ng-click="generate()">Generate</button>
+	 </div>
+
+ 	 <div class="col-md-4">
+	 	<h3>Replacers</h3>
+	 	<section ng-repeat="rule in replacer.rules">
+	 		<p class="col-md-4">{{rule.key}}</p>
+	 		<p class="col-md-4">{{rule.value}}</p>
+	 		<p class="col-md-4"><button class="btn btn-danger" ng-click="removeRule($index)">Remove</button></p>
+	 	</section>
+	 	<div class="col-md-6">
+	 		<input class="form-control" type="text" placeholder="key" ng-model="replacerKey">
+	 	</div>
+	 	<div class="col-md-6">
+	 		<input class="form-control" type="text" placeholder="value" ng-model="replacerValue">
+	 	</div>
+	 	<button class="btn btn-default form-control" ng-click="addReplacer()">Add Replacer</button>
+	 </div>
+</div>
+<div class="row">
+	<div class="col-md-12">
+	 	<h3>Output</h3>
+	 	<textarea class="form-control" style="min-height: 100px;" ng-model="output"></textarea>
+	 </div>
+</div>
+
+</div>
