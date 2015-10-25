@@ -9,6 +9,14 @@ app.controller('textCtrl', function($scope){
 		}
 	}; 
 
+	$scope.export = function(){
+		alert($scope.replacer.toString()); 
+	}
+
+	$scope.import = function(){
+		$scope.replacer = JSON.parse($scope.importObj); 
+	}
+
 	$scope.generate = function(){
 		var output = $scope.replacer.template; 
 
